@@ -1,22 +1,32 @@
 import React, { useState } from 'react';
 import './App.css';
 
+  //para que o display sempre iniciar com "0"
 const App: React.FC = () => {
   const [display, setDisplay] = useState<string>('0');
 
+  //função para quando clicar em algum valor, ele mostrar na tela
   const handleInput = (value: string) => {
-    setDisplay((prev) => (prev === '0' ? value : prev + value));
+    setDisplay((prev) => {
+      if (prev == '0') {
+        return value;
+      } else {
+        return prev + value;
+      }
+    });
   };
 
+  //quando o display apagar ele começa com "0"
   const handleClear = () => {
     setDisplay('0');
   };
 
+  //apaga o último caractere, além de um "if" para que toda vez que aparecer "erro" ele apaga tudp
   const handleBackspace = () => {
   if (display === 'Erro') {
-    setDisplay(''); // apaga tudo se estiver com "Erro"
+    setDisplay(''); 
   } else {
-    setDisplay(display.slice(0, -1)); // apaga o último caractere
+    setDisplay(display.slice(0, -1));
   }
 };
 
@@ -29,7 +39,7 @@ const App: React.FC = () => {
     }
   };
 
-
+  //adicionando todos os botão da calculadora
   return (
     <div className="container">
       <div className="display">{display}</div>

@@ -1,77 +1,51 @@
 /* Fundo em degradê */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background: linear-gradient(145deg, #525253, #28283b);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: linear-gradient(145deg, #cecece, #333333); /* Fundo com um degradê diagonal */
+  min-height: 100vh;                    /* Faz o corpo ocupar 100% da altura da janela */
+  display: flex;                        /* Usa Flexbox para centralizar conteúdo */
+  justify-content: center;              /* Centraliza horizontalmente */
+  align-items: center;                  /* Centraliza verticalmente */
 }
 
 /* Caixa da calculadora */
 .container {
-  width: 320px;
-  padding: 20px;
-  border-radius: 20px;
-  background-color: #000000;
-  box-shadow: 0 0 20px rgba(34, 45, 73, 0.8);
+  width: 320px;                         /* Largura fixa da calculadora */
+  padding: 20px;                        /* Espaçamento interno */
+  border-radius: 20px;                  /* Bordas arredondadas */
+  background-color: #000000;          /* Fundo preto */
+  box-shadow: 0 0 20px rgba(26, 37, 63, 0.8); /* Sombra ao redor da calculadora */
 }
 
 .display {
-  height: 80px;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
-  font-size: 36px;             /* Reduzi um pouco pra caber mais */
-  text-align: right;
-  padding: 20px;
-  border-radius: 12px;
-  box-sizing: border-box;
-  margin-bottom: 20px;
+  height: 50px;                         /* Altura da área de exibição dos números */
+  background-color: #ffffff;          /* Fundo branco */
+  color: rgb(0, 0, 0);                /* Texto preto */
+  font-size: 36px;                      /* Tamanho da fonte dos números */
+  text-align: right;                    /* Alinha os números à direita */
+  padding: 20px;                        /* Espaçamento interno */
+  border-radius: 12px;                  /* Bordas arredondadas da tela*/
+  margin-bottom: 50px;                  /* Espaço abaixo da tela */
 
   /* Adições importantes */
-  max-width: 320px;            /* Limita a largura */
-  overflow-x: auto;
+  max-width: 320px;                     /* Limita a largura máxima da tela */
+  overflow-x: auto;                     /* Adiciona rolagem horizontal se ultrapassar a largura */
 }
 
 /* Grade dos botões */
 .keypad {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  display: grid;                      /* Define um layout em grade (grid) */
+  grid-template-columns: repeat(4, 1fr); /* 4 colunas de tamanho igual */
+  gap: 12px;                          /* Espaço entre os botões */
 }
 
 /* Estilo geral dos botões */
 .keypad button {
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  font-size: 24px;
-  font-weight: bold;
-  color: rgb(14, 11, 11);
-  cursor: pointer;
-  transition: 0.2s ease;
-  background-color: #d87135;
-}
-
-.keypad button:hover {
-  filter: brightness(1.2);
-}
-
-/* Cores específicas */
-.keypad button.operator {
-  background-color: #da8b1e;
-  color: white;
-}
-
-.keypad button.clear,
-.keypad button.backspace {
-  background-color: #a5a5a5;
-  color: black;
-}
-
-.keypad button.zero {
-  grid-column: span 2;
-  border-radius: 30px;
+  height: 60px;                       /* Altura dos botões */
+  border-radius: 50%;                 /* Torna os botões circulares */
+  border: none;                       /* Remove a borda padrão */
+  font-size: 24px;                    /* Tamanho do texto do botão */
+  font-weight: bold;                  /* Texto em negrito */
+  color: rgb(14, 11, 11);           /* Cor do texto nos botões */
+  cursor: pointer;                    /* Cursor em forma de mão ao passar por cima */
+  background-color: #fa8b4b;        /* Cor laranja dos botões */
 }
