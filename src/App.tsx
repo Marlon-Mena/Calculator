@@ -7,11 +7,11 @@ const App: React.FC = () => {
 
   //função para quando clicar em algum valor, ele mostrar na tela
   const handleInput = (value: string) => {
-    setDisplay((prev) => {
+    setDisplay((atualNumber) => {
       if (prev == '0') {
         return value;
       } else {
-        return prev + value;
+        return atualNumber + value;
       }
     });
   };
